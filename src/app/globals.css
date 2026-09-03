@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+:root {
+  --color-forest: #164a3a;
+  --color-leaf: #4f8f68;
+  --color-ivory: #faf7f0;
+  --color-sage: #eaf1e8;
+  --color-sand: #c9a86a;
+  --color-charcoal: #1e2723;
+  --color-white: #ffffff;
+  --color-coral: #e99a7a;
+
+  --font-display: "Playfair Display";
+  --font-body: "Manrope";
+}
+
+@theme inline {
+  --color-forest: var(--color-forest);
+  --color-leaf: var(--color-leaf);
+  --color-ivory: var(--color-ivory);
+  --color-sage: var(--color-sage);
+  --color-sand: var(--color-sand);
+  --color-charcoal: var(--color-charcoal);
+  --color-coral: var(--color-coral);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+* {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: var(--color-ivory);
+  color: var(--color-charcoal);
+  font-family: var(--font-body), sans-serif;
+}
+
+h1, h2, h3, h4,
+.font-display {
+  font-family: var(--font-display), serif;
+}
+
+::selection {
+  background: var(--color-sand);
+  color: var(--color-forest);
+}
+
+.cursor-none-desktop {
+  cursor: none;
+}
+
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-sand);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Pure-CSS reveal animation — deliberately does NOT depend on any
+   JavaScript (no IntersectionObserver, no scroll listeners). Some mobile
+   browsers were failing to run the JS-based version reliably, leaving
+   content invisible. A CSS @keyframes animation runs as soon as the
+   browser paints the element — it needs no script to execute. If
+   animations are unsupported or disabled, the element is still fully
+   visible by default (opacity is only ever touched inside the keyframes
+   themselves, never as a permanent inline/base style). */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(var(--reveal-y, 24px));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-onload {
+  animation: reveal-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: var(--reveal-delay, 0s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-onload {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Hide scrollbar on the mobile header nav strip (Chrome/Safari/Edge). */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}

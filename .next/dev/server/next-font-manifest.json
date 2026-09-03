@@ -1,0 +1,11 @@
+{
+  "app": {
+    "[project]/anthurium-resort/src/app/about/page": [],
+    "[project]/anthurium-resort/src/app/activities/page": [],
+    "[project]/anthurium-resort/src/app/page": [],
+    "[project]/anthurium-resort/src/app/stay/page": []
+  },
+  "appUsingSizeAdjust": true,
+  "pages": {},
+  "pagesUsingSizeAdjust": false
+}
