@@ -9,7 +9,10 @@ import { videos } from "@/data/videos";
 
 export function CorporateSection() {
   return (
-    <section id="corporate" className="relative overflow-hidden bg-forest px-6 py-24 lg:px-10 lg:py-32">
+    <section
+      id="corporate"
+      className="relative overflow-hidden bg-forest px-6 py-24 lg:px-10 lg:py-32"
+    >
       <SectionVideoBackground
         src={videos.corporate}
         className="opacity-15"
@@ -46,7 +49,12 @@ export function CorporateSection() {
           <Button href={site.whatsappUrl} variant="secondary" external>
             {site.secondaryCta}
           </Button>
-          <Button href="/booking" variant="secondary" className="bg-sand text-forest border-sand hover:bg-white">
+          <Button
+            href="https://outinggo.in/#booking"
+            variant="secondary"
+            className="bg-sand text-forest border-sand hover:bg-white"
+            external
+          >
             Book Now
           </Button>
         </div>

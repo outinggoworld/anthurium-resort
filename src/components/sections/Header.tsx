@@ -29,14 +29,14 @@ export function Header() {
         "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
         solid
           ? "bg-ivory/90 backdrop-blur-md shadow-[0_4px_24px_rgba(22,74,58,0.08)]"
-          : "bg-transparent"
+          : "bg-transparent",
       )}
     >
       {/* Row 1: logo + nav (desktop) + Book Now — same on every screen size */}
       <div
         className={cn(
           "mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 transition-all duration-500 sm:px-6 lg:px-10",
-          solid ? "py-3" : "py-4 lg:py-6"
+          solid ? "py-3" : "py-4 lg:py-6",
         )}
       >
         <Link href="/" className="flex shrink-0 items-center gap-2 sm:gap-3">
@@ -51,7 +51,7 @@ export function Header() {
           <span
             className={cn(
               "font-display text-base tracking-[0.1em] transition-colors sm:text-xl sm:tracking-[0.15em] lg:text-2xl",
-              solid ? "text-forest" : "text-white"
+              solid ? "text-forest" : "text-white",
             )}
           >
             {site.name}
@@ -65,7 +65,7 @@ export function Header() {
               href={item.href}
               className={cn(
                 "text-sm font-medium tracking-wide transition-colors hover:opacity-70",
-                solid ? "text-charcoal" : "text-white"
+                solid ? "text-charcoal" : "text-white",
               )}
             >
               {item.label}
@@ -74,7 +74,9 @@ export function Header() {
         </nav>
 
         <Link
-          href="/booking"
+          href="https://outinggo.in/#booking"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex shrink-0 items-center rounded-full bg-forest px-3.5 py-2 text-xs font-semibold text-ivory transition-all duration-300 hover:bg-leaf sm:px-5 sm:py-2.5 sm:text-sm lg:px-6"
         >
           Book Now
@@ -85,7 +87,7 @@ export function Header() {
       <div
         className={cn(
           "border-t transition-colors duration-500 lg:hidden",
-          solid ? "border-forest/10" : "border-white/15"
+          solid ? "border-forest/10" : "border-white/15",
         )}
       >
         <nav
@@ -98,7 +100,7 @@ export function Header() {
               href={item.href}
               className={cn(
                 "shrink-0 text-xs font-medium tracking-wide transition-colors hover:opacity-70 sm:text-sm",
-                solid ? "text-charcoal" : "text-white"
+                solid ? "text-charcoal" : "text-white",
               )}
             >
               {item.label}

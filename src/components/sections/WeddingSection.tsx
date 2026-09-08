@@ -8,7 +8,10 @@ import { videos } from "@/data/videos";
 
 export function WeddingSection() {
   return (
-    <section id="weddings" className="relative overflow-hidden bg-ivory px-6 py-24 lg:px-10 lg:py-32">
+    <section
+      id="weddings"
+      className="relative overflow-hidden bg-ivory px-6 py-24 lg:px-10 lg:py-32"
+    >
       {/* subtle decorative organic shape */}
       <div
         aria-hidden="true"
@@ -44,7 +47,10 @@ export function WeddingSection() {
 
           <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
             {wedding.features.map((feature) => (
-              <li key={feature} className="flex items-start gap-2.5 text-sm text-charcoal/85">
+              <li
+                key={feature}
+                className="flex items-start gap-2.5 text-sm text-charcoal/85"
+              >
                 <Check size={16} className="mt-0.5 flex-shrink-0 text-leaf" />
                 {feature}
               </li>
@@ -55,7 +61,11 @@ export function WeddingSection() {
             <Button href={site.whatsappUrl} variant="primary" external>
               {site.secondaryCta}
             </Button>
-            <Button href="/booking" variant="ghost">
+            <Button
+              href="https://outinggo.in/#booking"
+              variant="ghost"
+              external
+            >
               Book Now
             </Button>
           </div>

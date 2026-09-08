@@ -8,7 +8,10 @@ import { site } from "@/data/site";
 
 export function AccommodationSection() {
   return (
-    <section id="accommodation" className="relative overflow-hidden bg-sage px-6 py-24 lg:px-10 lg:py-32">
+    <section
+      id="accommodation"
+      className="relative overflow-hidden bg-sage px-6 py-24 lg:px-10 lg:py-32"
+    >
       <AccommodationGlow />
       <div className="relative z-10 mx-auto max-w-7xl">
         <Reveal>
@@ -22,7 +25,12 @@ export function AccommodationSection() {
             {accommodationIntro}
           </p>
           <div className="mt-6">
-            <Button href="/booking" variant="primary" className="bg-forest text-ivory hover:bg-leaf">
+            <Button
+              href="https://outinggo.in/#booking"
+              variant="primary"
+              className="bg-forest text-ivory hover:bg-leaf"
+              external
+            >
               Book Now
             </Button>
           </div>
@@ -39,7 +47,9 @@ export function AccommodationSection() {
                   />
                 </div>
                 <div className="flex flex-col justify-center p-8 lg:p-12">
-                  <h3 className="font-display text-3xl text-forest">{stay.name}</h3>
+                  <h3 className="font-display text-3xl text-forest">
+                    {stay.name}
+                  </h3>
                   <p className="mt-3 text-base leading-relaxed text-charcoal/75">
                     {stay.description}
                   </p>
@@ -50,13 +60,20 @@ export function AccommodationSection() {
                         Rs {stay.originalPrice}
                       </span>
                     )}
-                    <span className="font-display text-2xl text-forest">Rs {stay.price}</span>
-                    <span className="text-xs text-charcoal/50">{stay.priceNote}</span>
+                    <span className="font-display text-2xl text-forest">
+                      Rs {stay.price}
+                    </span>
+                    <span className="text-xs text-charcoal/50">
+                      {stay.priceNote}
+                    </span>
                   </div>
 
                   <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5">
                     {stay.inclusions.map((item) => (
-                      <li key={item} className="flex items-center gap-1.5 text-xs text-charcoal/70">
+                      <li
+                        key={item}
+                        className="flex items-center gap-1.5 text-xs text-charcoal/70"
+                      >
                         <Check size={13} className="text-leaf" />
                         {item}
                       </li>
@@ -68,7 +85,9 @@ export function AccommodationSection() {
                     Check-in {stay.checkIn} · Check-out {stay.checkOut}
                   </p>
                   {stay.extraGuestNote && (
-                    <p className="mt-1 text-xs italic text-charcoal/45">{stay.extraGuestNote}</p>
+                    <p className="mt-1 text-xs italic text-charcoal/45">
+                      {stay.extraGuestNote}
+                    </p>
                   )}
 
                   <div className="mt-6 flex flex-wrap items-center gap-4">
@@ -79,7 +98,12 @@ export function AccommodationSection() {
                       View Details
                       <ArrowUpRight size={16} />
                     </Link>
-                    <Button href={site.whatsappUrl} variant="ghost" external className="text-sm">
+                    <Button
+                      href={site.whatsappUrl}
+                      variant="ghost"
+                      external
+                      className="text-sm"
+                    >
                       Enquire
                     </Button>
                   </div>

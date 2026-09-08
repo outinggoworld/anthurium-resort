@@ -35,7 +35,9 @@ export function WhatsAppButton() {
           <span className="text-[11px] font-semibold">Call</span>
         </a>
         <a
-          href="/booking"
+          href="https://outinggo.in/#booking"
+          target="_blank"
+          rel="noopener noreferrer"
           className="flex flex-1 flex-col items-center gap-0.5 py-3 text-forest"
         >
           <PencilLine size={20} />

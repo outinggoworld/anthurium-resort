@@ -36,7 +36,11 @@ export function IntroCards() {
             Everything You Need for a Perfect Getaway
           </h2>
           <div className="mt-6 flex justify-center">
-            <Button href="/booking" variant="ghost">
+            <Button
+              href="https://outinggo.in/#booking"
+              variant="ghost"
+              external
+            >
               Book Now
             </Button>
           </div>
@@ -55,7 +59,9 @@ export function IntroCards() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest/85 via-forest/10 to-transparent" />
                 <div className="absolute inset-x-0 bottom-0 p-8">
-                  <h3 className="font-display text-2xl text-white">{card.title}</h3>
+                  <h3 className="font-display text-2xl text-white">
+                    {card.title}
+                  </h3>
                   <p className="mt-2 text-sm text-white/80">{card.copy}</p>
                   <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-sand">
                     Discover

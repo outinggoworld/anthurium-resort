@@ -55,13 +55,21 @@ export function Hero() {
           transition={{ duration: 0.7, delay: 0.45 }}
           className="mt-10 flex flex-wrap items-center gap-4"
         >
-          <Button href="/activities" variant="primary" className="bg-sand text-forest hover:bg-white">
+          <Button
+            href="/activities"
+            variant="primary"
+            className="bg-sand text-forest hover:bg-white"
+          >
             Explore the Resort
           </Button>
           <Button href={site.whatsappUrl} variant="secondary" external>
             {site.secondaryCta}
           </Button>
-          <Button href="/booking" variant="secondary">
+          <Button
+            href="https://outinggo.in/#booking"
+            variant="secondary"
+            external
+          >
             Book Now
           </Button>
         </motion.div>
@@ -70,7 +78,10 @@ export function Hero() {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1, y: [0, 8, 0] }}
-        transition={{ opacity: { delay: 1 }, y: { repeat: Infinity, duration: 1.8 } }}
+        transition={{
+          opacity: { delay: 1 },
+          y: { repeat: Infinity, duration: 1.8 },
+        }}
         className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-white/70"
         aria-hidden="true"
       >

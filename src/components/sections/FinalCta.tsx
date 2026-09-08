@@ -27,10 +27,19 @@ export function FinalCta() {
             Come away for a weekend full of adventures.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <Button href={site.whatsappUrl} variant="primary" className="bg-sand text-forest hover:bg-white" external>
+            <Button
+              href={site.whatsappUrl}
+              variant="primary"
+              className="bg-sand text-forest hover:bg-white"
+              external
+            >
               {site.secondaryCta}
             </Button>
-            <Button href="/booking" variant="secondary">
+            <Button
+              href="https://outinggo.in/#booking"
+              variant="secondary"
+              external
+            >
               Book Now
             </Button>
             <Button href="/activities" variant="secondary">

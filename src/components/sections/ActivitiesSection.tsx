@@ -71,9 +71,10 @@ export function ActivitiesSection() {
             View All
           </Button>
           <Button
-            href="/booking"
+            href="https://outinggo.in/#booking"
             variant="secondary"
             className="bg-sand text-forest border-sand hover:bg-white"
+            external
           >
             Book Now
           </Button>
