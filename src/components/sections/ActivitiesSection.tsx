@@ -18,7 +18,10 @@ export function ActivitiesSection() {
   };
 
   return (
-    <section id="activities" className="relative overflow-hidden bg-forest px-6 py-24 lg:px-10 lg:py-32">
+    <section
+      id="activities"
+      className="relative overflow-hidden bg-forest px-6 py-24 lg:px-10 lg:py-32"
+    >
       <SectionVideoBackground
         src={videos.activities}
         className="opacity-25"
@@ -64,10 +67,14 @@ export function ActivitiesSection() {
         </div>
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-          <Button href={activitiesLink} variant="secondary" external>
+          <Button href={activitiesLink} variant="secondary">
             View All
           </Button>
-          <Button href="/booking" variant="secondary" className="bg-sand text-forest border-sand hover:bg-white">
+          <Button
+            href="/booking"
+            variant="secondary"
+            className="bg-sand text-forest border-sand hover:bg-white"
+          >
             Book Now
           </Button>
         </div>

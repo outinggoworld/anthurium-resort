@@ -1,4 +1,3 @@
-import { ArrowUpRight } from "lucide-react";
 import { Activity } from "@/data/activities";
 
 export function ActivityCard({ activity }: { activity: Activity }) {
@@ -15,13 +14,6 @@ export function ActivityCard({ activity }: { activity: Activity }) {
         <p className="mt-1.5 text-sm leading-relaxed text-white/75">
           {activity.description}
         </p>
-        <span className="mt-3 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-sand">
-          View Details
-          <ArrowUpRight
-            size={14}
-            className="transition-transform duration-300 group-hover:translate-x-1"
-          />
-        </span>
       </div>
     </div>
   );

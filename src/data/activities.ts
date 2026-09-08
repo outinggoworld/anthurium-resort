@@ -98,4 +98,4 @@ export const activities: Activity[] = [
   },
 ];
 
-export const activitiesLink = "https://theanthurium.in/amenities/";
+export const activitiesLink = "/activities";
