@@ -103,7 +103,7 @@ export default async function AccommodationDetailPage({ params }: Props) {
 
               <div className="mt-6 flex flex-col gap-3">
                 <Button
-                  href="https://outinggo.in/anthurium.html#book-anthurium"
+                  href="https://outinggo.in/#booking"
                   variant="primary"
                   className="w-full justify-center"
                   external

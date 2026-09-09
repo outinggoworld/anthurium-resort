@@ -74,7 +74,7 @@ export function Header() {
         </nav>
 
         <Link
-          href="https://outinggo.in/anthurium.html#book-anthurium"
+          href="https://outinggo.in/#booking"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex shrink-0 items-center rounded-full bg-forest px-3.5 py-2 text-xs font-semibold text-ivory transition-all duration-300 hover:bg-leaf sm:px-5 sm:py-2.5 sm:text-sm lg:px-6"

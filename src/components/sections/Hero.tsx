@@ -66,7 +66,7 @@ export function Hero() {
             {site.secondaryCta}
           </Button>
           <Button
-            href="https://outinggo.in/anthurium.html#book-anthurium"
+            href="https://outinggo.in/#booking"
             variant="secondary"
             external
           >

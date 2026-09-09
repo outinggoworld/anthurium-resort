@@ -50,7 +50,7 @@ export function CorporateSection() {
             {site.secondaryCta}
           </Button>
           <Button
-            href="https://outinggo.in/anthurium.html#book-anthurium"
+            href="https://outinggo.in/#booking"
             variant="secondary"
             className="bg-sand text-forest border-sand hover:bg-white"
             external
