@@ -26,7 +26,7 @@ export function AccommodationSection() {
           </p>
           <div className="mt-6">
             <Button
-              href="https://outinggo.in/#booking"
+              href="https://outinggo.in/anthurium.html#book-anthurium"
               variant="primary"
               className="bg-forest text-ivory hover:bg-leaf"
               external

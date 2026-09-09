@@ -1,4 +1,4 @@
-User-agent: *
+git push -u origin mainUser-agent: *
 Allow: /
 
 Sitemap: https://theanthurium.in/sitemap.xml

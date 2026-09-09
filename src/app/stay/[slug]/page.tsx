@@ -48,19 +48,28 @@ export default async function AccommodationDetailPage({ params }: Props) {
             <ArrowLeft size={16} />
             Back to all stays
           </Link>
-          <h1 className="font-display text-4xl text-white sm:text-5xl">{stay.name}</h1>
+          <h1 className="font-display text-4xl text-white sm:text-5xl">
+            {stay.name}
+          </h1>
         </div>
       </div>
 
       <div className="mx-auto max-w-5xl px-6 py-16 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-3 lg:gap-16">
           <div className="lg:col-span-2">
-            <p className="text-base leading-relaxed text-charcoal/80">{stay.description}</p>
+            <p className="text-base leading-relaxed text-charcoal/80">
+              {stay.description}
+            </p>
 
-            <h2 className="mt-10 font-display text-2xl text-forest">What&apos;s Included</h2>
+            <h2 className="mt-10 font-display text-2xl text-forest">
+              What&apos;s Included
+            </h2>
             <ul className="mt-4 grid gap-2.5 sm:grid-cols-2">
               {stay.inclusions.map((item) => (
-                <li key={item} className="flex items-center gap-2 text-sm text-charcoal/75">
+                <li
+                  key={item}
+                  className="flex items-center gap-2 text-sm text-charcoal/75"
+                >
                   <Check size={15} className="text-leaf" />
                   {item}
                 </li>
@@ -72,7 +81,9 @@ export default async function AccommodationDetailPage({ params }: Props) {
               Check-in {stay.checkIn} · Check-out {stay.checkOut}
             </p>
             {stay.extraGuestNote && (
-              <p className="mt-2 text-sm italic text-charcoal/50">{stay.extraGuestNote}</p>
+              <p className="mt-2 text-sm italic text-charcoal/50">
+                {stay.extraGuestNote}
+              </p>
             )}
           </div>
 
@@ -84,15 +95,27 @@ export default async function AccommodationDetailPage({ params }: Props) {
                     Rs {stay.originalPrice}
                   </span>
                 )}
-                <span className="font-display text-3xl text-forest">Rs {stay.price}</span>
+                <span className="font-display text-3xl text-forest">
+                  Rs {stay.price}
+                </span>
               </div>
               <p className="mt-1 text-xs text-charcoal/50">{stay.priceNote}</p>
 
               <div className="mt-6 flex flex-col gap-3">
-                <Button href="/booking" variant="primary" className="w-full justify-center">
+                <Button
+                  href="https://outinggo.in/anthurium.html#book-anthurium"
+                  variant="primary"
+                  className="w-full justify-center"
+                  external
+                >
                   Book Now
                 </Button>
-                <Button href={site.whatsappUrl} variant="ghost" external className="w-full justify-center">
+                <Button
+                  href={site.whatsappUrl}
+                  variant="ghost"
+                  external
+                  className="w-full justify-center"
+                >
                   Enquire on WhatsApp
                 </Button>
               </div>
