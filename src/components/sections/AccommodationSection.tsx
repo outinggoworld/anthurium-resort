@@ -26,7 +26,7 @@ export function AccommodationSection() {
           </p>
           <div className="mt-6">
             <Button
-              href="https://outinggo.in/#booking"
+              href="https://outinggo.in/anthurium.html#book-anthurium"
               variant="primary"
               className="bg-forest text-ivory hover:bg-leaf"
               external
@@ -55,17 +55,25 @@ export function AccommodationSection() {
                   </p>
 
                   <div className="mt-5 flex flex-wrap items-baseline gap-2">
-                    {stay.originalPrice && (
-                      <span className="text-base text-charcoal/40 line-through">
-                        Rs {stay.originalPrice}
+                    {stay.soldOut ? (
+                      <span className="text-lg font-semibold text-red-600">
+                        Fully Booked
                       </span>
+                    ) : (
+                      <>
+                        {stay.originalPrice && (
+                          <span className="text-base text-charcoal/40 line-through">
+                            Rs {stay.originalPrice}
+                          </span>
+                        )}
+                        <span className="font-display text-2xl text-forest">
+                          Rs {stay.price}
+                        </span>
+                        <span className="text-xs text-charcoal/50">
+                          {stay.priceNote}
+                        </span>
+                      </>
                     )}
-                    <span className="font-display text-2xl text-forest">
-                      Rs {stay.price}
-                    </span>
-                    <span className="text-xs text-charcoal/50">
-                      {stay.priceNote}
-                    </span>
                   </div>
 
                   <ul className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5">
@@ -98,14 +106,20 @@ export function AccommodationSection() {
                       View Details
                       <ArrowUpRight size={16} />
                     </Link>
-                    <Button
-                      href={site.whatsappUrl}
-                      variant="ghost"
-                      external
-                      className="text-sm"
-                    >
-                      Enquire
-                    </Button>
+                    {stay.soldOut ? (
+                      <span className="inline-flex items-center rounded-full bg-charcoal/10 px-4 py-2 text-sm font-semibold text-charcoal/50">
+                        Sold Out
+                      </span>
+                    ) : (
+                      <Button
+                        href={site.whatsappUrl}
+                        variant="ghost"
+                        external
+                        className="text-sm"
+                      >
+                        Enquire
+                      </Button>
+                    )}
                   </div>
                 </div>
               </div>

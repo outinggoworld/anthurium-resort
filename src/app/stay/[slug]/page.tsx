@@ -90,26 +90,40 @@ export default async function AccommodationDetailPage({ params }: Props) {
           <div className="lg:col-span-1">
             <div className="sticky top-28 rounded-3xl border border-forest/10 bg-white p-7 shadow-sm">
               <div className="flex flex-wrap items-baseline gap-2">
-                {stay.originalPrice && (
-                  <span className="text-base text-charcoal/40 line-through">
-                    Rs {stay.originalPrice}
+                {stay.soldOut ? (
+                  <span className="text-xl font-semibold text-red-600">
+                    Fully Booked
                   </span>
+                ) : (
+                  <>
+                    {stay.originalPrice && (
+                      <span className="text-base text-charcoal/40 line-through">
+                        Rs {stay.originalPrice}
+                      </span>
+                    )}
+                    <span className="font-display text-3xl text-forest">
+                      Rs {stay.price}
+                    </span>
+                  </>
                 )}
-                <span className="font-display text-3xl text-forest">
-                  Rs {stay.price}
-                </span>
               </div>
               <p className="mt-1 text-xs text-charcoal/50">{stay.priceNote}</p>
 
               <div className="mt-6 flex flex-col gap-3">
-                <Button
-                  href="https://outinggo.in/#booking"
-                  variant="primary"
-                  className="w-full justify-center"
-                  external
-                >
-                  Book Now
-                </Button>
+                {stay.soldOut ? (
+                  <span className="w-full justify-center inline-flex items-center rounded-full bg-charcoal/10 px-4 py-3 text-sm font-semibold text-charcoal/50">
+                    Not available right now
+                  </span>
+                ) : (
+                  <Button
+                    href="https://outinggo.in/anthurium.html#book-anthurium"
+                    variant="primary"
+                    className="w-full justify-center"
+                    external
+                  >
+                    Book Now
+                  </Button>
+                )}
                 <Button
                   href={site.whatsappUrl}
                   variant="ghost"

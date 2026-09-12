@@ -10,6 +10,7 @@ export type Accommodation = {
   checkIn: string;
   checkOut: string;
   extraGuestNote?: string;
+  soldOut?: boolean;
 };
 
 export const accommodationIntro =
@@ -25,9 +26,16 @@ export const accommodations: Accommodation[] = [
     originalPrice: "1,399/-",
     price: "1,199/-",
     priceNote: "special offer + taxes, per person basis",
-    inclusions: ["Welcome Drink", "Buffet Dinner", "Amenities", "Morning Breakfast", "Bonfire"],
+    inclusions: [
+      "Welcome Drink",
+      "Buffet Dinner",
+      "Amenities",
+      "Morning Breakfast",
+      "Bonfire",
+    ],
     checkIn: "5:00 PM",
     checkOut: "11:00 AM",
+    soldOut: true,
   },
   {
     slug: "standard-rooms",
@@ -35,10 +43,16 @@ export const accommodations: Accommodation[] = [
     description:
       "Well-appointed standard rooms with full housekeeping and room service for a relaxed stay.",
     image: "/images/accommodation/suites-room.jpg",
-    originalPrice: "1,999/-",
-    price: "1,799/-",
+    originalPrice: "2,248/-",
+    price: "2,000/-",
     priceNote: "special offer + taxes, per person basis",
-    inclusions: ["Hi-Tea", "Dinner (candle night for couples)", "Amenities", "Morning Breakfast", "Bonfire"],
+    inclusions: [
+      "Hi-Tea",
+      "Dinner (candle night for couples)",
+      "Amenities",
+      "Morning Breakfast",
+      "Bonfire",
+    ],
     checkIn: "3:00 PM",
     checkOut: "11:00 AM",
   },
@@ -48,10 +62,16 @@ export const accommodations: Accommodation[] = [
     description:
       "Spacious suites for small groups, with the same comfort and service as our standard rooms, scaled up.",
     image: "/images/accommodation/suites-room.jpg",
-    originalPrice: "7,999/-",
-    price: "6,999/-",
+    originalPrice: "8,800/-",
+    price: "7,900/-",
     priceNote: "special offer + taxes, up to 5 pax",
-    inclusions: ["Hi-Tea", "Dinner (candle night for couples)", "Amenities", "Morning Breakfast", "Bonfire"],
+    inclusions: [
+      "Hi-Tea",
+      "Dinner (candle night for couples)",
+      "Amenities",
+      "Morning Breakfast",
+      "Bonfire",
+    ],
     checkIn: "3:00 PM",
     checkOut: "11:00 AM",
     extraGuestNote: "Extra guests charged at Rs 800 + taxes per person.",
@@ -62,10 +82,16 @@ export const accommodations: Accommodation[] = [
     description:
       "Spacious private hill-top villas for families and groups looking for a home-like stay on the property.",
     image: "/images/accommodation/villas-house.jpg",
-    originalPrice: "17,999/-",
-    price: "14,999/-",
+    originalPrice: "18,999/-",
+    price: "17,099/-",
     priceNote: "special offer + taxes, up to 6 pax",
-    inclusions: ["Hi-Tea", "Dinner (candle night for couples)", "Amenities", "Morning Breakfast", "Bonfire"],
+    inclusions: [
+      "Hi-Tea",
+      "Dinner (candle night for couples)",
+      "Amenities",
+      "Morning Breakfast",
+      "Bonfire",
+    ],
     checkIn: "3:00 PM",
     checkOut: "11:00 AM",
     extraGuestNote: "Extra guests charged at Rs 800 + taxes per person.",

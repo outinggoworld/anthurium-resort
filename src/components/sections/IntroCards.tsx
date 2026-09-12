@@ -37,7 +37,7 @@ export function IntroCards() {
           </h2>
           <div className="mt-6 flex justify-center">
             <Button
-              href="https://outinggo.in/#booking"
+              href="https://outinggo.in/anthurium.html#book-anthurium"
               variant="ghost"
               external
             >
