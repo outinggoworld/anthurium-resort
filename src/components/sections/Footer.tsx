@@ -16,7 +16,9 @@ export function Footer() {
                 height={40}
                 className="h-10 w-10"
               />
-              <p className="font-display text-2xl tracking-[0.15em]">{site.name}</p>
+              <p className="font-display text-2xl tracking-[0.15em]">
+                {site.name}
+              </p>
             </div>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/60">
               {site.tagline}
@@ -30,7 +32,10 @@ export function Footer() {
             <ul className="mt-4 space-y-2.5">
               {companyLinks.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm text-white/70 hover:text-white">
+                  <Link
+                    href={link.href}
+                    className="text-sm text-white/70 hover:text-white"
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -45,7 +50,10 @@ export function Footer() {
             <ul className="mt-4 space-y-2.5">
               {accommodationLinks.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-sm text-white/70 hover:text-white">
+                  <Link
+                    href={link.href}
+                    className="text-sm text-white/70 hover:text-white"
+                  >
                     {link.label}
                   </Link>
                 </li>
@@ -59,7 +67,12 @@ export function Footer() {
             </p>
             <ul className="mt-4 space-y-2.5 text-sm text-white/70">
               <li>
-                <a href={site.whatsappUrl} target="_blank" rel="noopener noreferrer" className="hover:text-white">
+                <a
+                  href={site.whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-white"
+                >
                   Chat on WhatsApp
                 </a>
               </li>
@@ -73,7 +86,24 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col gap-3 border-t border-white/10 pt-6 text-xs text-white/50 sm:flex-row sm:items-center sm:justify-between">
-          <p>{site.copyright}</p>
+          <p className="flex flex-wrap items-center gap-1.5">
+            🌴 Bookings for{" "}
+            <a
+              href="https://theanthurium.in"
+              className="font-semibold text-white/80 hover:text-white"
+            >
+              The Anthurium Resort
+            </a>{" "}
+            handled via OutingGo &nbsp;•&nbsp;{" "}
+            <a
+              href="https://outinggo.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-white/80 hover:text-white"
+            >
+              Back to OutingGo Home
+            </a>
+          </p>
           <div className="flex flex-wrap items-center gap-4">
             <Link href="/terms" className="hover:text-white/80">
               Terms &amp; Conditions
