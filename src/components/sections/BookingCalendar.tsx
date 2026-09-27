@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Reveal } from "@/components/ui/Reveal";
 import { Button } from "@/components/ui/Button";
 import { AmbientParticles } from "./AmbientParticles";
-import { bookedDates } from "@/data/booking";
+import { bookedDates, type BookingStatus } from "@/data/booking";
 import { site } from "@/data/site";
 import { cn } from "@/lib/cn";
 
@@ -70,14 +70,18 @@ export function BookingCalendar() {
           <div className="mt-12 overflow-hidden rounded-3xl bg-forest text-white shadow-xl">
             <div className="flex flex-col items-center justify-between gap-4 border-b border-white/10 px-6 py-6 sm:flex-row sm:px-10">
               <h3 className="font-display text-2xl text-sand">Resort Booking</h3>
-              <div className="flex items-center gap-6 text-xs">
+              <div className="flex flex-wrap items-center justify-center gap-4 text-xs sm:gap-6">
                 <span className="flex items-center gap-2">
                   <span className="h-2.5 w-2.5 rounded-full bg-leaf" />
                   Available Dates
                 </span>
                 <span className="flex items-center gap-2">
+                  <span className="h-2.5 w-2.5 rounded-full bg-amber-400" />
+                  Partially Booked
+                </span>
+                <span className="flex items-center gap-2">
                   <span className="h-2.5 w-2.5 rounded-full bg-coral" />
-                  Booked Dates
+                  Fully Booked
                 </span>
               </div>
             </div>
@@ -111,24 +115,44 @@ export function BookingCalendar() {
 
               <div className="mt-2 grid grid-cols-7 gap-y-2 text-center">
                 {cells.map((cell) => {
-                  const isBooked = cell.inMonth && bookedDates.includes(cell.key);
-                  const isPast =
-                    cell.inMonth && cell.key < todayKey;
+                  const status: BookingStatus | undefined = cell.inMonth
+                    ? bookedDates[cell.key]
+                    : undefined;
+                  const isFull = status === "full";
+                  const isPartial = status === "partial";
+                  const isPast = cell.inMonth && cell.key < todayKey;
                   const isToday = cell.key === todayKey;
                   const isSelected = cell.key === selected;
-                  const disabled = !cell.inMonth || isBooked || isPast;
+                  const disabled = !cell.inMonth || isFull || isPast;
 
                   return (
                     <button
                       key={cell.key}
                       disabled={disabled}
                       onClick={() => setSelected(cell.key)}
+                      title={
+                        isFull
+                          ? "Fully booked"
+                          : isPartial
+                          ? "Partially booked — limited rooms available"
+                          : undefined
+                      }
                       className={cn(
                         "mx-auto flex h-10 w-10 items-center justify-center rounded-full text-sm transition-colors",
                         !cell.inMonth && "text-transparent",
-                        cell.inMonth && !isBooked && !isPast && "text-white hover:bg-white/10",
-                        isBooked && "cursor-not-allowed text-coral/70 line-through",
-                        isPast && cell.inMonth && !isBooked && "cursor-not-allowed text-white/25",
+                        cell.inMonth &&
+                          !isFull &&
+                          !isPartial &&
+                          !isPast &&
+                          "text-white hover:bg-white/10",
+                        isFull && "cursor-not-allowed text-coral/70 line-through",
+                        isPartial &&
+                          !isPast &&
+                          "text-amber-300 ring-1 ring-amber-400/60 hover:bg-amber-400/10",
+                        isPast &&
+                          cell.inMonth &&
+                          !isFull &&
+                          "cursor-not-allowed text-white/25",
                         isToday && "ring-1 ring-sand",
                         isSelected && "bg-sand text-forest font-semibold hover:bg-sand"
                       )}
@@ -161,12 +185,6 @@ export function BookingCalendar() {
             </div>
           </div>
         </Reveal>
-
-        <p className="mt-6 text-center text-xs text-charcoal/40">
-          [CONTENT REQUIRED] — this calendar currently shows placeholder
-          availability (all dates open). Connect it to real booking data
-          before launch.
-        </p>
       </div>
     </section>
   );
