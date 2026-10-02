@@ -42,7 +42,7 @@ export const accommodations: Accommodation[] = [
     name: "Standard Rooms",
     description:
       "Well-appointed standard rooms with full housekeeping and room service for a relaxed stay.",
-    image: "/images/accommodation/suites-room.jpg",
+    image: "/images/accommodation/standard-rooms.png",
     originalPrice: "2,248/-",
     price: "2,000/-",
     priceNote: "special offer + taxes, per person basis",
@@ -61,7 +61,7 @@ export const accommodations: Accommodation[] = [
     name: "Premium Suites",
     description:
       "Spacious suites for small groups, with the same comfort and service as our standard rooms, scaled up.",
-    image: "/images/accommodation/suites-room.jpg",
+    image: "/images/accommodation/premium-suites.png",
     originalPrice: "8,800/-",
     price: "7,900/-",
     priceNote: "special offer + taxes, up to 5 pax",
